@@ -4,6 +4,8 @@ import "./globals.css";
 
 import { ReactLenis } from "@/utils/lenis";
 
+import Navigation from "@/components/navigation";
+
 const literata = Literata({
   subsets: ["latin"],
   display: "swap",
@@ -22,7 +24,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <ReactLenis root>
-        <body className={`${literata.className} antialiased`}>{children}</body>
+        <body className={`${literata.className} antialiased`}>
+          <Navigation />
+          {children}
+        </body>
       </ReactLenis>
     </html>
   );
