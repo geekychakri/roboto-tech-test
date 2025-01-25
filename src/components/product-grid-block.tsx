@@ -3,20 +3,7 @@ import Image from "next/image";
 import { cn } from "@/utils/cn";
 import { gridProductCount } from "@/utils/gridProductCount";
 
-interface GridBlockProps {
-  data: {
-    heading: string;
-    products: {
-      title: string;
-      subTitle: string;
-      image: {
-        src: string;
-        width: number;
-        height: number;
-      };
-    }[];
-  };
-}
+import type { GridBlockProps } from "@/types";
 
 export default function ProductGridBlock({ data }: GridBlockProps) {
   return (
