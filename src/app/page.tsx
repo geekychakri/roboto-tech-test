@@ -8,6 +8,8 @@ import ProductGridBlock from "@/components/product-grid-block";
 import grid1Image from "/public/images/grid-1-image.png";
 import grid2Image from "/public/images/grid-2-image.png";
 
+import FluidProductGridBlock from "@/components/fluid-product-grid-block";
+
 const gridData1 = {
   heading: "Our latest chimneypieces",
   products: [
@@ -135,6 +137,7 @@ export default function Home() {
       />
       <ProductGridBlock data={gridData1} />
       <ProductGridBlock data={gridData2} />
+      <FluidProductGridBlock />
     </>
   );
 }
