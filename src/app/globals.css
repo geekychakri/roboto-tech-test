@@ -8,7 +8,9 @@
     scrollbar-width: thin;
   }
   :root {
-    --background: #f3f0ed;
+    --background-primary: #f3f0ed;
+    --background-secondary: #e3e3e3;
+    --background-tertiary: #dfdad7;
     --foreground: #000000;
     --text-primary: #000000;
     --text-secondary: #9c9c9d;
@@ -17,7 +19,7 @@
   }
 
   body {
-    background: var(--background);
+    background: var(--background-primary);
     color: var(--foreground);
   }
 }

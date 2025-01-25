@@ -10,7 +10,9 @@ export default {
     extend: {
       colors: {
         backgroundColor: {
-          main: "var(--background)",
+          primary: "var(--background-primary)",
+          secondary: "var(--background-secondary)",
+          tertiary: "var(--background-tertiary)",
         },
         textColor: {
           primary: "var(--text-primary)",
