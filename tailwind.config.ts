@@ -22,6 +22,7 @@ export default {
         borderColor: {
           primary: "var(--border-primary)",
         },
+        divider: "var(--divider-color)",
       },
     },
   },

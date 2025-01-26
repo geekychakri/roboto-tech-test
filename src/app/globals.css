@@ -13,9 +13,12 @@
     --background-tertiary: #dfdad7;
     --foreground: #000000;
     --text-primary: #000000;
-    --text-secondary: #9c9c9d;
-    --text-primary-action: #737373;
+    /* --text-secondary: #9c9c9d; */
+    --text-secondary: #6c6c6c;
+    /* --text-primary-action: #737373; */
+    --text-primary-action: #6b6b6b;
     --border-primary: #737373;
+    --divider-color: #9c9c9d;
   }
 
   body {

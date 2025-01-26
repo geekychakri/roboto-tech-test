@@ -6,7 +6,12 @@ import type { ContentMediaBlockType } from "@/types";
 export default function ContentMediaBlock({ data }: ContentMediaBlockType) {
   console.log({ data });
   return (
-    <section className="py-16 md:px-16 md:py-24">
+    <section
+      className={cn(
+        "py-16 md:px-16 md:py-24",
+        data.backgroundColor === "tertiary" && "bg-backgroundColor-tertiary"
+      )}
+    >
       <div className="container px-4 md:px-6">
         <div
           className={cn(
