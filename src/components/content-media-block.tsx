@@ -3,8 +3,14 @@ import Link from "next/link";
 import { cn } from "@/utils/cn";
 
 import type { ContentMediaBlockType } from "@/types";
+
+import * as motion from "motion/react-client";
+
+import { staggerChildren, fadeInUp } from "@/animations/variants";
+
 export default function ContentMediaBlock({ data }: ContentMediaBlockType) {
   console.log({ data });
+
   return (
     <section
       className={cn(
@@ -12,24 +18,41 @@ export default function ContentMediaBlock({ data }: ContentMediaBlockType) {
         data.backgroundColor === "tertiary" && "bg-backgroundColor-tertiary"
       )}
     >
-      <div className="container px-4 md:px-6">
+      <motion.div className="container px-4 md:px-6">
         <div
           className={cn(
             "grid gap-8 lg:grid-cols-2 lg:gap-16 items-center",
             data.image.position === "left" && "md:[&>div:first-child]:order-1"
           )}
         >
-          <div className={cn("space-y-4 md:space-y-6")}>
+          <motion.div
+            className={cn("space-y-4 md:space-y-6")}
+            variants={staggerChildren}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+          >
             {data.eyebrowText && (
-              <h2>{data.eyebrowText.toLocaleUpperCase("en-US")}</h2>
+              <motion.h2 variants={fadeInUp}>
+                {data.eyebrowText.toLocaleUpperCase("en-US")}
+              </motion.h2>
             )}
-            <h2 className="text-3xl md:text-4xl font-serif tracking-tight">
+            <motion.h2
+              variants={fadeInUp}
+              className="text-3xl md:text-4xl tracking-tight"
+            >
               {data.title}
-            </h2>
-            <p className="text-textColor-secondary leading-relaxed">
+            </motion.h2>
+            <motion.p
+              variants={fadeInUp}
+              className="text-textColor-secondary leading-relaxed"
+            >
               {data.description}
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 pt-2">
+            </motion.p>
+            <motion.div
+              variants={fadeInUp}
+              className="flex flex-col sm:flex-row gap-4 pt-2"
+            >
               <Link
                 href={data.links.primaryLink.url}
                 className="inline-flex items-center justify-center border border-textColor-primary-action px-4 py-2 text-sm font-medium text-textColor-primary-action"
@@ -44,9 +67,14 @@ export default function ContentMediaBlock({ data }: ContentMediaBlockType) {
                   {data.links.secondaryLink.text}
                 </Link>
               )}
-            </div>
-          </div>
-          <div className="relative aspect-[4/5] w-full overflow-hidden">
+            </motion.div>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, amount: 0.3 }}
+            className="relative aspect-[4/5] w-full overflow-hidden"
+          >
             <Image
               src={data.image.src}
               alt={data.image.alt}
@@ -54,9 +82,9 @@ export default function ContentMediaBlock({ data }: ContentMediaBlockType) {
               className="object-cover"
               sizes="(max-width: 768px) 100vw, 50vw"
             />
-          </div>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

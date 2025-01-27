@@ -6,6 +6,8 @@ import { ReactLenis } from "@/utils/lenis";
 
 import Navigation from "@/components/navigation";
 
+import { MotionConfig } from "motion/react";
+
 const literata = Literata({
   subsets: ["latin"],
   display: "swap",
@@ -26,7 +28,7 @@ export default function RootLayout({
       <ReactLenis root>
         <body className={`${literata.className} antialiased`}>
           <Navigation />
-          {children}
+          <MotionConfig reducedMotion="user">{children}</MotionConfig>
         </body>
       </ReactLenis>
     </html>

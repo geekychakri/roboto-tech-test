@@ -2,13 +2,31 @@ import Image from "next/image";
 
 import { fluidGridData } from "@/data";
 
+import * as motion from "motion/react-client";
+
+import { staggerChildren, fadeIn, easing } from "@/animations/variants";
+
 export default function FluidProductGridBlock() {
   return (
     <section className="py-8 px-12 text-center">
-      <h1 className="font-medium text-xl mb-12">Our latest furniture</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-14 px-8">
+      <motion.h2
+        initial={{ y: 60, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6, ease: easing }}
+        viewport={{ once: true, amount: 0.5 }}
+        className="font-medium text-xl mb-12"
+      >
+        Our latest furniture
+      </motion.h2>
+      <motion.div
+        variants={staggerChildren}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-14 px-8"
+      >
         {fluidGridData.products.map((product, i) => (
-          <div key={i} className="text-center">
+          <motion.div key={i} variants={fadeIn} className="text-center">
             <div className="relative w-full aspect-[3/3] overflow-hidden mb-4">
               <Image
                 src={product.image.src}
@@ -21,9 +39,9 @@ export default function FluidProductGridBlock() {
             </div>
             <p>{product.title}</p>
             <p className="text-textColor-secondary">{product.subTitle}</p>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 }
