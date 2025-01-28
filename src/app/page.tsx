@@ -3,6 +3,7 @@ import {
   contentMediaData2,
   contentMediaData3,
   contentMediaData4,
+  contentMediaData5,
   gridData1,
   gridData2,
   gridData3,
@@ -23,10 +24,11 @@ export default function Home() {
       <ContentMediaBlock data={contentMediaData2} />
       <ProductGridBlock data={gridData1} />
       <ProductGridBlock data={gridData2} />
-      <FluidProductGridBlock />
       <ContentMediaBlock data={contentMediaData3} />
-      <ProductGridBlock data={gridData3} />
+      <FluidProductGridBlock />
       <ContentMediaBlock data={contentMediaData4} />
+      <ProductGridBlock data={gridData3} />
+      <ContentMediaBlock data={contentMediaData5} />
       <Footer data={footerData} />
     </>
   );

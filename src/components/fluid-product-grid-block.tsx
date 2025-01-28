@@ -1,20 +1,19 @@
 import Image from "next/image";
 
-import { fluidGridData } from "@/data";
-
 import * as motion from "motion/react-client";
 
+import { fluidGridData } from "@/data";
 import { staggerChildren, fadeIn, easing } from "@/animations/variants";
 
 export default function FluidProductGridBlock() {
   return (
-    <section className="py-8 px-12 text-center">
+    <section className="bg-backgroundColor-secondary px-12 py-8 text-center">
       <motion.h2
         initial={{ y: 60, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: easing }}
         viewport={{ once: true, amount: 0.5 }}
-        className="font-medium text-xl mb-12"
+        className="mb-12 text-xl font-medium"
       >
         Our latest furniture
       </motion.h2>
@@ -23,22 +22,28 @@ export default function FluidProductGridBlock() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-14 px-8"
+        className="grid grid-cols-1 gap-14 px-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5"
       >
         {fluidGridData.products.map((product, i) => (
-          <motion.div key={i} variants={fadeIn} className="text-center">
-            <div className="relative w-full aspect-[3/3] overflow-hidden mb-4">
+          <motion.div
+            key={i}
+            variants={fadeIn}
+            className="flex w-full flex-col items-center gap-4"
+          >
+            <div className="relative aspect-square w-full overflow-hidden">
               <Image
                 src={product.image.src}
-                alt={`Image ${i + 1}`}
+                alt={product.image.alt}
                 quality={100}
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
                 // className="object-contain"
               />
             </div>
-            <p>{product.title}</p>
-            <p className="text-textColor-secondary">{product.subTitle}</p>
+            <div className="flex flex-col gap-1">
+              <p>{product.title}</p>
+              <p className="text-textColor-secondary">{product.subTitle}</p>
+            </div>
           </motion.div>
         ))}
       </motion.div>

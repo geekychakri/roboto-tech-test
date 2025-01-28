@@ -1,13 +1,12 @@
 import Image from "next/image";
+import * as motion from "motion/react-client";
 
 import HeroImage from "/public/images/hero.png";
 
-import * as motion from "motion/react-client";
-
 export default function HeroBlock() {
   return (
-    <header className="px-10 max-sm:px-4 flex flex-col gap-8 items-center">
-      <motion.div className="w-full h-[60vh] md:h-[85vh] relative">
+    <header className="flex flex-col items-center gap-8 px-5 md:px-11">
+      <motion.div className="relative h-[60vh] w-full md:h-[85vh]">
         <Image
           aria-hidden
           src={HeroImage}
@@ -22,7 +21,7 @@ export default function HeroBlock() {
       <motion.span
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        className="text-textColor-secondary font-medium"
+        className="font-medium text-textColor-secondary"
       >
         Fireplaces | Lighting | Furniture | Journal
       </motion.span>

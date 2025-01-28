@@ -1,23 +1,21 @@
 import Image from "next/image";
 
-import { cn } from "@/utils/cn";
-import { gridProductCount } from "@/utils/gridProductCount";
-
-import type { GridBlockProps } from "@/types";
-
 import * as motion from "motion/react-client";
 
+import { cn } from "@/utils/cn";
+import { gridProductCount } from "@/utils/gridProductCount";
 import { staggerChildren, fadeIn, easing } from "@/animations/variants";
+import type { GridBlockProps } from "@/types";
 
 export default function ProductGridBlock({ data }: GridBlockProps) {
   return (
-    <section className="py-8 px-12 text-center bg-backgroundColor-secondary">
+    <section className="bg-backgroundColor-secondary px-5 py-8 text-center md:px-11">
       <motion.h2
         initial={{ y: 60, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: easing }}
         viewport={{ once: true, amount: 0.5 }}
-        className="font-medium text-xl mb-12"
+        className="mb-12 text-xl font-medium"
       >
         {data.heading}
       </motion.h2>
@@ -27,14 +25,14 @@ export default function ProductGridBlock({ data }: GridBlockProps) {
         whileInView="visible"
         viewport={{ once: true }}
         className={cn(
-          "grid grid-cols-1 sm:grid-cols-2 gap-8 justify-items-center",
-          gridProductCount(data.products.length)
+          "grid grid-cols-1 justify-items-center gap-8 sm:grid-cols-2",
+          gridProductCount(data.products.length),
         )}
       >
         {data.products.map((product, i) => (
           <motion.div
             key={i}
-            className="flex flex-col gap-4 items-center w-full"
+            className="flex w-full flex-col items-center gap-4"
             variants={fadeIn}
           >
             <div

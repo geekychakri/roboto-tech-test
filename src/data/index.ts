@@ -2,6 +2,7 @@ import sectionOneImage from "/public/images/section-1.png";
 import sectionTwoImage from "/public/images/section-2.png";
 import sectionThreeImage from "/public/images/section-3.png";
 import sectionFourImage from "/public/images/section-4.png";
+import sectionFiveImage from "/public/images/section-5.png";
 
 import grid1Image from "/public/images/grid-1-image.png";
 import grid2Image from "/public/images/grid-2-image.png";
@@ -54,13 +55,13 @@ export const contentMediaData2 = {
 };
 
 export const contentMediaData3 = {
-  eyebrowText: "Journal",
-  title: "The Grand Collection",
+  eyebrowText: "",
+  title: "Furniture",
   description:
     "Lorem ipsum dolor sit amet, incididunt ut labore et dolore consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim labore et dolore magn ad minim veniam.",
   links: {
     primaryLink: {
-      text: "Discover More",
+      text: "Explore our Furniture",
       url: "#",
     },
   },
@@ -69,7 +70,6 @@ export const contentMediaData3 = {
     alt: "Classic fireplace with ornate gold-framed mirror",
     position: "right",
   },
-  backgroundColor: "tertiary",
 };
 
 export const contentMediaData4 = {
@@ -85,6 +85,25 @@ export const contentMediaData4 = {
   },
   image: {
     src: sectionFourImage.src,
+    alt: "Classic fireplace with ornate gold-framed mirror",
+    position: "left",
+  },
+  backgroundColor: "tertiary",
+};
+
+export const contentMediaData5 = {
+  eyebrowText: "",
+  title: "Subscribe to the Jamb Journal",
+  description:
+    "Lorem ipsum dolor sit amet, incididunt ut labore et dolore consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim labore et dolore magn ad minim veniam.",
+  links: {
+    primaryLink: {
+      text: "Discover More",
+      url: "#",
+    },
+  },
+  image: {
+    src: sectionFiveImage.src,
     alt: "journal",
     position: "left",
   },
@@ -255,7 +274,7 @@ export const fluidGridData = {
       title: "Lorem Ipsum",
       subTitle: "Subtitle",
       image: {
-        alt: "chair",
+        alt: "X-Pattern Chair",
         src: fluidImage1.src,
         width: fluidImage1.width,
         height: fluidImage1.height,
@@ -265,7 +284,7 @@ export const fluidGridData = {
       title: "Lorem Ipsum",
       subTitle: "Subtitle",
       image: {
-        alt: "chair",
+        alt: "Curved Pattern Chair",
         src: fluidImage2.src,
         width: fluidImage2.width,
         height: fluidImage2.height,
@@ -275,7 +294,7 @@ export const fluidGridData = {
       title: "Lorem Ipsum",
       subTitle: "Subtitle",
       image: {
-        alt: "chair",
+        alt: "Side Table",
         src: fluidImage3.src,
         width: fluidImage3.width,
         height: fluidImage3.height,
@@ -285,7 +304,7 @@ export const fluidGridData = {
       title: "Lorem Ipsum",
       subTitle: "Subtitle",
       image: {
-        alt: "chair",
+        alt: "Round Bronze Mirror",
         src: fluidImage4.src,
         width: fluidImage4.width,
         height: fluidImage4.height,
@@ -295,7 +314,7 @@ export const fluidGridData = {
       title: "Lorem Ipsum",
       subTitle: "Subtitle",
       image: {
-        alt: "chair",
+        alt: "Green Velvet Sofa",
         src: fluidImage5.src,
         width: fluidImage5.width,
         height: fluidImage5.height,
@@ -345,7 +364,7 @@ export const footerData = {
         },
         {
           heading: "Sell an Antique Chimneypiece",
-          links: [{ title: "Sell an Antique Chimneypiece", url: "/" }],
+          links: [{ title: "Antique Chimneypiece", url: "/" }],
         },
       ],
     },
